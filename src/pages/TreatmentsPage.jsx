@@ -1,50 +1,68 @@
-import React from "react";
-import heroImage from "../assets/treatment_1.jpg";
-import icon from "../assets/mandala_icon.png";
+import heroImage from "../assets/treatment_2.jpg";
+import yggdrasil from "../assets/yggdrasil.png";
+import mandala from "../assets/mandala_3.png";
+import mandala_two from "../assets/mandala_2.png";
+import massage_one from "../assets/massage_one.png";
+import massagehead from "../assets/massagehead.png";
+import loveletter from "../assets/loveletter.png";
+import distance_healing from "../assets/distance_healing.png";
+import butterfly_hand from "../assets/butterfly_hand.png";
+import { useState } from "react";
+
+import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
+import TestimonialCarousel from "../components/TestimonialCarousel";
+import Card from "../components/Card";
 
 const TreatmentsPage = () => {
+  const [expandedCards, setExpandedCards] = useState({});
+
+  const toggleExpand = (index) => {
+    setExpandedCards((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
   const treatments = [
     {
-      title: "Helkroppsmassage med healing",
-      description:
-        "Beskrivning av behandling 1. Den här behandlingen fokuserar på...",
-      icon: icon,
+      title: "Djupgående healing",
+      description: "Helkroppsmassage med healing. ",
+      image: massage_one,
       price: "799kr",
       time: "ca 90 min",
     },
     {
-      title: "Halvkroppsmassage med healing",
+      title: "Mjuk förnyelse",
       description:
-        "Beskrivning av behandling 2. Den här behandlingen är för...",
-      icon: icon,
+        "Halvkroppsmassage med healing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quo voluptas tempore, nulla, ipsam molestias sit dolore et facilis blanditiis sunt molestiae vero consequatur quaerat quod nesciunt accusantium. Velit, impedit!",
+      image: butterfly_hand,
       price: "649kr",
       time: "ca 60 min",
     },
     {
       title: "Distanshealing",
       description:
-        "Beskrivning av behandling 3. Den här behandlingen erbjuder...",
-      icon: icon,
+        "Den här behandlingen erbjuder... Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quo voluptas tempore, nulla, ipsam molestias sit dolore et facilis blanditiis sunt molestiae vero consequatur quaerat quod nesciunt accusantium. Velit, impedit! ",
+      image: distance_healing,
       price: "449kr (första gången 400kr)",
       time: "ca 45 min",
     },
     {
       title: "Djupdykning",
       description:
-        "Djupdykning är en kombinationsbehandling mellan en fysisk behandling....",
-      icon: icon,
+        "Djupdykning är en kombinationsbehandling mellan en fysisk behandling... Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quo voluptas tempore, nulla, ipsam molestias sit dolore et facilis blanditiis sunt molestiae vero consequatur quaerat quod nesciunt. quaerat quod nesciunt accusantium. Velit, impeditquaerat quod nesciunt accusantium. Velit, impedit",
+      image: massagehead,
       price: "980kr / 1130kr",
-      time: "-",
+      time: "60min/90min",
     },
   ];
 
   const testimonials = [
     {
-      text: "Jag kände hur det lixom drogs ut genom mina fötter. Hur jag trycktes ner i bänken. Alltså inte negativt. Känner ett sådant lugn nu och huvudvärken jag hade innan har släppt.",
+      text: "Jag kände hur det liksom drogs ut genom mina fötter. Hur jag trycktes ner i bänken. Alltså inte negativt. Känner ett sådant lugn nu och huvudvärken jag hade innan har släppt.",
       name: "Mi",
     },
     {
-      text: "Helt fantastisk distanshealing! Kände hur det pirrade och lixom blåste genom kroppen.",
+      text: "Helt fantastisk distanshealing! Kände hur det pirrade och liksom blåste genom kroppen.",
       name: "Eva",
     },
     {
@@ -56,11 +74,11 @@ const TreatmentsPage = () => {
       name: "Susan",
     },
     {
-      text: "Att få distanshealing av dig är underbart! Man känner av dina lugna, helande energier och känner sig lugn och balanserad efter behandlingen. När du efter berättar om det du fått till dig så stämmer det alltid in och du ger så fina, konkreta tips och råd till hur man ska gå vidare i sitt egna helande. Kan egentligen skriva hur mycket positivt som helst men detta var några rader ❤️",
+      text: "Att få distanshealing av dig är underbart! Man känner av dina lugna, helande energier och känner sig lugn och balanserad efter behandlingen. När du efter berättar om det du fått till dig så stämmer det alltid in.",
       name: "Angelica",
     },
     {
-      text: "Jag kände mycket under healingen. Först var det som att det tog stopp vid höfterna och att hela benen var tunga. Och så kände jag hur det öppnades upp. Sen att kroppen sögs ner i bänken och sen att den blev jättelätt, som att den svävade. Svårt att beskriva men jättehäftigt! Trodde jag behövde hård massage men detta var precis vad jag behövde.",
+      text: "Jag kände mycket under healingen. Först var det som att det tog stopp vid höfterna och att hela benen var tunga. Och så kände jag hur det öppnades upp.",
       name: "Annika",
     },
     {
@@ -72,89 +90,204 @@ const TreatmentsPage = () => {
       name: "Christin",
     },
     {
-      text: "Jag tycker det är så härligt och häftigt hur du alltid känner vad kroppen och själen behöver just då! Ingen behandling är lik den andra och det är alltid lika spännande att få höra vad kroppen har att säga! ❤",
+      text: "Jag tycker det är så härligt och häftigt hur du alltid känner vad kroppen och själen behöver just då! Ingen behandling är lik den andra!",
       name: "Melissa",
     },
   ];
 
   return (
     <section className="">
-      <div
-        className="relative h-[500px] bg-cover bg-bottom flex items-center justify-center text-white"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        {/* Vit overlay med 50% opacity */}
-        <div className="absolute inset-0 bg-white opacity-42"></div>
+      <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 sm:mt-10 mb-10 py-20 px-6 bg-accent">
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center lg:text-left">
+            Välkommen på behandling
+          </h2>
 
-        {/* Texten */}
-        <h1 className="relative text-7xl text-primary">
-          Välkommen på behandling
-        </h1>
-      </div>
-      <article className="w-full p-8 mx-auto">
-        {/* <h2>titel</h2> */}
-        <p>
-          Välkommen på behandling hos mig! Jag håller till centralt i Umeå, i
-          vårat egna massagerum. Jag fokuserar främst på cirkulation och
-          avslappning i massagen. Du får välja att kombinera en helkroppsmassage
-          eller en halkroppsmassage, med healing. Massagen får dig att landa i
-          din kropp och släppa vardagens tempo & stress. Healingen hjälper mig
-          att nå dina blockeringar som inte är i det fysiska, för att kunna gå
-          djupare i behandlingen och balansera kroppens olika lager. Vi sitter
-          sedan några minuter och pratar om hur det känts och vad din kropp
-          berättat. Observera att jag valt att endast ta emot kvinnor på mina
-          behandlingar. Bokar gör du lättast via länkarna nedan.
-        </p>
-      </article>
-
-      <article className="mx-auto px-4 py-6">
-        <div className="text-center mb-8">
-          <h3 className="text-3xl font-semibold">Mina behandlingar</h3>
+          <p className="font-second text-base leading-relaxed text-gray-800 space-y-4 text-center lg:text-left">
+            Jag håller till centralt i Umeå, i vårt egna massagerum. Jag
+            fokuserar främst på cirkulation och avslappning i massagen.
+            <br />
+            <br />
+            Du får välja att kombinera en helkroppsmassage eller en
+            halvkroppsmassage, med healing. Massagen får dig att landa i din
+            kropp och släppa vardagens tempo & stress.
+            <br />
+            <br />
+            Healingen hjälper mig att nå dina blockeringar som inte är i det
+            fysiska, för att kunna gå djupare i behandlingen och balansera
+            kroppens olika lager.
+            <br />
+            <br />
+            Vi sitter sedan några minuter och pratar om hur det känts och vad
+            din kropp berättat.
+            <br />
+            <br />
+            <span className="font-semibold italic">
+              Observera att jag valt att endast ta emot kvinnor på mina
+              behandlingar.
+            </span>
+          </p>
         </div>
+        <div className="w-[280px] sm:w-[350px] lg:w-[420px] h-[280px] sm:h-[350px] lg:h-[420px] rounded-full overflow-hidden">
+          <img src={heroImage} alt="" className="w-full h-full object-cover" />
+        </div>
+      </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <section className="flex justify-center my-20">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-15 px-6">
           {treatments.map((treatment, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="flex items-center gap-4 mb-2">
-                <img
-                  src={treatment.icon}
-                  alt={treatment.title}
-                  className="h-12 w-12 object-contain"
-                />
-                <h4 className="text-xl font-semibold uppercase">
-                  {treatment.title}
-                </h4>
-              </div>
-              <div className="pl-16">
-                <h5>{treatment.time}</h5>
-                <p>{treatment.description}</p>
-                <p className="font-bold">{treatment.price}</p>
-              </div>
-            </div>
+            <Card
+              key={index}
+              image={treatment.image}
+              title={treatment.title}
+              subtitle={treatment.time}
+              description={
+                expandedCards[index]
+                  ? treatment.description
+                  : treatment.description.slice(0, 120) + "..."
+              }
+              isExpanded={expandedCards[index]}
+              onToggle={() => toggleExpand(index)}
+              toggleVisible={treatment.description.length > 120}
+              minHeight="400px"
+              extraContent={
+                <p className="text-md font-semibold text-black mt-8">
+                  {treatment.price}
+                </p>
+              }
+            />
           ))}
         </div>
-      </article>
-      <div className="flex gap-6 w-full justify-center py-8">
-        <button className="border w-[200px] rounded-xl p-4">Facebook pm</button>
-        <button className="border w-[200px] rounded-xl p-4">
-          Instagram pm
+      </section>
+
+      <div className="flex justify-center pb-8 font-semibold font-main text-2xl tracking-wider">
+        <button className="border w-[200px] p-3 hover:cursor-pointer">
+          BOKA
         </button>
       </div>
-      <div className="overflow-hidden bg-secondary py-6">
-        <div className="flex animate-marquee gap-8 w-max">
-          {[...testimonials, ...testimonials].map((item, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-md rounded-xl px-6 py-4 w-[350px] min-h-[150px] flex flex-col justify-between text-gray-800"
-            >
-              <p className="italic">"{item.text}"</p>
-              <p className="text-right font-semibold mt-2">– {item.name}</p>
-            </div>
-          ))}
+      <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly py-20 mt-10 px-6 bg-accent">
+        {/* Image */}
+        <div className=" w-[180px] h-[180px]  border rounded-full p-6 flex items-center justify-center">
+          <img src={loveletter} alt="" className="" />
         </div>
-      </div>
+        {/* Text content */}
+        <div className="w-3/4 lg:w-1/2">
+          <h2 className="text-3xl sm:text-2xl pb-6 font-main font-semibold text-center lg:text-left">
+            Vill du vara med på listan för utskick av tider?
+          </h2>
+
+          <p className="font-second text-base leading-relaxed text-gray-800 space-y-4 text-center lg:text-left">
+            Max en gång per månad skickar jag ut lediga tider för behandling.
+            Vill du vara med på denna lista så kontakta mig via{" "}
+            <a
+              href="mailto:lia_lundberg@outlook.com?subject=skriv upp mig!"
+              className="underline underline-offset-2"
+            >
+              mejl
+            </a>{" "}
+            eller sociala medier så skickar jag ut tiderna till dig på kanalen
+            du kontaktat mig via (om inget annat önskas).
+            <br />
+            <br />
+            <span className="italic pb-6">
+              Det går alltid att höra av sig utöver utskicken för att se när jag
+              har en lucka nästa gång.
+            </span>
+          </p>
+          <div className="flex gap-5 mt-6 justify-center lg:justify-start mb-6">
+            <a
+              href="https://www.facebook.com/forfattarinnaLialundberg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 transition"
+              aria-label="Facebook"
+            >
+              <FaFacebook size={32} />
+            </a>
+            <a
+              href="https://www.instagram.com/lialundberg/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-500 hover:text-pink-700 transition"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={32} />
+            </a>
+            <a
+              href="mailto:lia_lundberg@outlook.com"
+              className="text-gray-700 hover:text-gray-900 transition"
+              aria-label="E-post"
+            >
+              <FaEnvelope size={32} />
+            </a>
+          </div>
+        </div>
+      </section>
+      {/* <section className="overflow- p-6"> */}
+      <TestimonialCarousel testimonials={testimonials} />
+      {/* </section> */}
     </section>
   );
 };
 
 export default TreatmentsPage;
+
+/* 
+
+     <section className="flex justify-center my-20">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-15 px-6">
+          {treatments.map((treatment, index) => (
+            <div
+              key={index}
+              className="bg-fourth font-second border shadow-2xl text-white w-auto min-w-[200px] max-w-[350px] min-h-[480px] grid grid-rows-[auto_auto_1fr_auto_auto] mt-20"
+            >
+              <div className="relative w-[150px] h-[150px] -mt-24 justify-self-center">
+                <div className="w-full h-full rounded-full bg-white p-2 box-content">
+                  <img
+                    src={treatment.image}
+                    alt={treatment.title}
+                    className="h-full object-contain rounded-full"
+                  />
+                </div>
+              </div>
+
+              <div className="flex justify-center items-center pt-8">
+                <h3 className="relative text-black inline-block font-main uppercase text-2xl text-[#2e4c3a] custom-underline">
+                  {treatment.title}
+                </h3>
+              </div>
+
+              <div className="flex flex-col px-4 text-center pt-6">
+                <p className="text-sm text-black">{treatment.time}</p>
+
+                <p
+                  className={`text-sm mt-2 text-black transition-all duration-300 ${
+                    expandedCards[index] ? "" : "line-clamp-5"
+                  }`}
+                >
+                  {treatment.description}
+                </p>
+               
+                {treatment.description.length > 120 && (
+                  <button
+                    className="text-xs text-[#2e4c3a] underline underline-offset-4 mt-4 self-center"
+                    onClick={() => toggleExpand(index)}
+                  >
+                    {expandedCards[index] ? "Visa mindre" : "Visa mer"}
+                  </button>
+                )}
+              </div>
+
+              <div></div>
+
+              <div className="flex justify-center items-center pb-8">
+                <p className="text-md font-semibold text-black">
+                  {treatment.price}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+*/

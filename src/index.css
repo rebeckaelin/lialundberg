@@ -1,16 +1,76 @@
 @import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @theme {
   --color-primary: #345457;
-  --color-secondary: #e8eb93;
-  --color-accent: #c58940;
+  --color-secondary: #8d998a;
+  --color-accent: #e4e3d8;
+  --color-fourth: #eee6da;
 
-  --font-main: "Lora", "serif";
-  --font-second: "Open Sans", "sans-serif";
+  --font-main: "Cinzel", serif;
+  --font-second: "Raleway", sans-serif;
+  --font-accent: "Cinzel Decorative", serif;
   --color-light: rgb(249, 248, 246);
   --color-dark: rgb(75, 71, 68);
 }
-@keyframes marquee {
+
+.custom-underline {
+  position: relative;
+}
+
+.custom-underline {
+  position: relative;
+}
+
+.custom-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5,12 C15,14 25,10 35,13 C45,15 55,11 65,13 C75,14 85,10 95,12 C105,13 115,11 125,13 C135,14 145,10 155,12 C165,13 175,11 185,13 C195,14 205,10 215,13 C225,15 235,11 245,13 C255,14 265,10 275,12 C285,13 295,11 305,13 C315,14 325,10 335,12 C345,13 355,11 365,13 C375,14 385,10 395,12' fill='none' stroke='%232e4c3a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* .cinzel-decorative-regular {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cinzel-decorative-bold {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cinzel-decorative-black {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 900;
+  font-style: normal;
+} */
+
+/* // <weight>: Use a value from 100 to 900 */
+/* .raleway-<uniquifier> {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* // <weight>: Use a value from 400 to 900 */
+/* .cinzel-<uniquifier> {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* @keyframes marquee {
   0% {
     transform: translateX(0%);
   }
@@ -21,22 +81,23 @@
 
 .animate-marquee {
   animation: marquee 200s linear infinite;
-}
+} */
 
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+:root {
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 400; */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #f5efe6; */
 
-  font-synthesis: none;
+  /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
+/*
 
 a {
   font-weight: 500;
