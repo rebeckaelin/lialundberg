@@ -78,7 +78,10 @@ const Ebony = () => {
           </div>
         </section>
         <TestimonialCarousel testimonials={bookTestimonials} />
-        <section className="">
+        <section className="pt-12 border-t-1">
+          <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center">
+            Återförsäljare
+          </h2>
           <StoresGrid />
         </section>
       </section>
