@@ -5,6 +5,10 @@ const Webshop = () => {
         Välkommen till min lilla webbshop! <br /> - Här kan du köpa mina böcker
         -
       </h2>
+      <p className="font-second text-base leading-relaxed italic text-gray-800 space-y-4 text-center pb-10">
+        *obs, notera att det för närvarande är det separata webbshopar för mina
+        böcker*
+      </p>
 
       <div className="w-[90%] lg:flex flex-row gap-10 ">
         <iframe
