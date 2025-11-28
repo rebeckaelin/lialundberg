@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { LiaBookSolid } from "react-icons/lia";
 import { useNavigate } from "react-router-dom";
 import mandala_two from "../assets/mandala_2.png";
+import symbol_transparent from "../assets/symbol_lia_transparent.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,28 +14,25 @@ export default function Navbar() {
   const isActive = (path) => location.pathname.startsWith(path);
   const navigate = useNavigate();
 
-  // const books = ["Lilla Lia", "Ebony", "Webbshop"];
-
   const books = [
     { title: "Lilla Lia", path: "/bocker/lillalia" },
     { title: "Ebony", path: "/bocker/ebony" },
-    { title: "Webbshop", path: "/bocker/webbshop" }, // optional, if you add that page
   ];
 
   return (
     <>
       {/* Header with logo and mobile menu button */}
-      <header className="relative px-4 py-2 sm:border-b flex items-center justify-between sm:justify-center">
+      <header className="relative px-4 md:mt-20 py-2 sm:border-b flex items-center justify-between sm:justify-center">
         <img
-          src={mandala_two}
+          src={symbol_transparent}
           alt="mandala"
           className="
     absolute 
-    -top-16 sm:-top-52 
-    left-1/2 
+    -top-18 sm:-top-20 md:-top-48
+    left-1/2
     -translate-x-1/2 
-    w-32 sm:w-72 
-    opacity-20 
+    w-70  md:w-100
+    opacity-35
     pointer-events-none 
     select-none 
     z-0
@@ -42,7 +40,7 @@ export default function Navbar() {
         />
 
         <div
-          className="flex flex-col items-center font-main my-10 gap-3 hover:cursor-pointer"
+          className="z-1 w-4/5 sm:w-auto flex flex-col  font-main my-10 gap-3 hover:cursor-pointer"
           onClick={() => navigate("/")}
         >
           <h1 className="text-4xl sm:text-6xl md:text-8xl">
@@ -84,12 +82,11 @@ export default function Navbar() {
               onMouseLeave={() => setIsHovered(false)}
             >
               <Link
-                to="/forfattare"
-                className={`flex items-center hover:underline underline-offset-10 gap-1 ${
-                  isActive("/forfattare") ? "underline " : ""
-                }`}
+                className={
+                  "flex items-center hover:underline underline-offset-10 gap-1"
+                }
               >
-                Författare
+                Böcker
                 <ChevronDown
                   size={16}
                   className={`transition-transform duration-300  ${
@@ -134,12 +131,12 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              to="/kontakt"
+              to="/Webbshop"
               className={`relative hover:underline underline-offset-10 ${
-                isActive("/kontakt") ? "underline " : ""
+                isActive("/webbshop") ? "underline " : ""
               }`}
             >
-              Kontakt
+              Webbshop
             </Link>
           </li>
         </ul>
@@ -165,9 +162,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/forfattare" onClick={() => setMenuOpen(false)}>
-              Författare
-            </Link>
+            <Link onClick={() => setMenuOpen(false)}>Böcker</Link>
             <ul className="ml-4 mt-2 space-y-1 text-sm">
               {books.map(({ title, path }, index) => (
                 <li
@@ -181,21 +176,6 @@ export default function Navbar() {
                   </Link>
                 </li>
               ))}
-              {/* <li>
-                <Link to="/forfattare/bok1" onClick={() => setMenuOpen(false)}>
-                  – Bok 1
-                </Link>
-              </li>
-              <li>
-                <Link to="/forfattare/bok2" onClick={() => setMenuOpen(false)}>
-                  – Bok 2
-                </Link>
-              </li>
-              <li>
-                <Link to="/forfattare/bok3" onClick={() => setMenuOpen(false)}>
-                  – Bok 3
-                </Link>
-              </li> */}
             </ul>
           </li>
           <li>
@@ -204,35 +184,13 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/kontakt" onClick={() => setMenuOpen(false)}>
-              Kontakt
+            <Link to="/webbshop" onClick={() => setMenuOpen(false)}>
+              Webbshop
             </Link>
           </li>
         </ul>
+        <img src={symbol_transparent} alt="" />
       </div>
-      {/* <div className="relative">
-        <img
-          src={mandala_two}
-          alt="mandala"
-          className=" sm:block absolute -top-92 -left-23 w-140 opacity-20 -translate-x-1/3 -translate-y-1/3 pointer-events-none select-none z-0"
-        />
-      </div> */}
-
-      {/* <div className="relative w-full h-64 sm:h-96 overflow-hidden">
-        <img
-          src={mandala_two}
-          alt="mandala"
-          className="
-      absolute 
-      top-0 
-      left-0 
-      w-48 sm:w-72 
-      opacity-20 
-      pointer-events-none 
-      select-none
-    "
-        />
-      </div> */}
     </>
   );
 }

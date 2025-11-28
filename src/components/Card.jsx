@@ -1,4 +1,4 @@
-export default function Card({
+const Card = ({
   image,
   title,
   description,
@@ -7,11 +7,12 @@ export default function Card({
   isExpanded,
   onToggle,
   toggleVisible,
-}) {
+  minwidth,
+}) => {
   return (
     <div
       className={`bg-fourth font-second border shadow-2xl text-white w-auto min-w-[200px] max-w-[350px] grid grid-rows-[auto_auto_1fr_auto_auto] mt-20 mb-5 rounded-lg`}
-      style={{ minHeight: minHeight || "480px" }}
+      style={{ minHeight: minHeight || "480px", minWidth: minwidth || "300px" }}
     >
       {/* Image */}
       {image && (
@@ -55,10 +56,10 @@ export default function Card({
 
       {/* Extra content always rendered */}
       {extraContent && (
-        <div className="flex justify-center items-center pb-8">
-          {extraContent}
-        </div>
+        <div className="flex justify-center pb-8">{extraContent}</div>
       )}
     </div>
   );
-}
+};
+
+export default Card;

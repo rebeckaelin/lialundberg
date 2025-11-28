@@ -1,20 +1,19 @@
 import heroImage from "../assets/treatment_2.jpg";
-import yggdrasil from "../assets/yggdrasil.png";
-import mandala from "../assets/mandala_3.png";
-import mandala_two from "../assets/mandala_2.png";
 import massage_one from "../assets/massage_one.png";
 import massagehead from "../assets/massagehead.png";
 import loveletter from "../assets/loveletter.png";
 import distance_healing from "../assets/distance_healing.png";
 import butterfly_hand from "../assets/butterfly_hand.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 import Card from "../components/Card";
+import BookingModal from "../components/BookingModal";
 
 const TreatmentsPage = () => {
   const [expandedCards, setExpandedCards] = useState({});
+  const [modalOpen, setModalOpen] = useState(false);
 
   const toggleExpand = (index) => {
     setExpandedCards((prev) => ({
@@ -22,6 +21,19 @@ const TreatmentsPage = () => {
       [index]: !prev[index],
     }));
   };
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto"; // cleanup
+    };
+  }, [modalOpen]);
+
   const treatments = [
     {
       title: "Djupgående healing",
@@ -160,11 +172,22 @@ const TreatmentsPage = () => {
         </div>
       </section>
 
-      <div className="flex justify-center pb-8 font-semibold font-main text-2xl tracking-wider">
+      {/* <div className="flex justify-center pb-8 font-semibold font-main text-2xl tracking-wider">
         <button className="border w-[200px] p-3 hover:cursor-pointer">
           BOKA
         </button>
+      </div> */}
+
+      <div className="flex justify-center pb-8 font-semibold font-main text-2xl tracking-wider">
+        <button
+          className="border w-[200px] p-3 cursor-pointer"
+          onClick={() => setModalOpen(true)}
+        >
+          BOKA
+        </button>
       </div>
+
+      <BookingModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
       <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly py-20 mt-10 px-6 bg-accent">
         {/* Image */}
         <div className=" w-[180px] h-[180px]  border rounded-full p-6 flex items-center justify-center">

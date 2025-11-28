@@ -1,5 +1,4 @@
 import ebony_image from "../assets/ebony.jpeg";
-import mandala from "../assets/mandala_transparent.png";
 import StoresGrid from "../components/StoresGrid";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 
@@ -79,7 +78,7 @@ const Ebony = () => {
           </div>
         </section>
         <TestimonialCarousel testimonials={bookTestimonials} />
-        <section className="bg-accent">
+        <section className="">
           <StoresGrid />
         </section>
       </section>

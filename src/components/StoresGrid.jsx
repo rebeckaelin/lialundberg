@@ -22,54 +22,70 @@ const stores = [
     type: "physical",
     name: "Riddarborgens hälsocenter",
     city: "Umeå",
-    link: "https://riddarborgen.nu/",
+    address: "Residensgatan 1A",
   },
   {
     type: "physical",
     name: "ICA Mariehem",
     city: "Umeå",
-    link: "https://www.ica.se/butiker/kvantum/umea/ica-kvantum-mariehem-1003786/",
+    address: "Mariehemsvägen 8",
   },
   {
     type: "physical",
     name: "Gårdshem",
     city: "Umeå",
-    link: "https://www.gardshem.se/",
+    address: "Kungsgatan 67 (Utopia)",
   },
 ];
+
+const onlineStores = stores.filter((s) => s.type === "online");
+const physicalStores = stores.filter((s) => s.type === "physical");
 
 export default function StoresGrid() {
   return (
     <>
-      <section className=" px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-main font-semibold text-center">
-          Våra återförsäljare
-        </h2>
-      </section>
-
       <section className="flex justify-center py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
-          {stores.map((store, index) => (
-            <Card
-              key={index}
-              image={
-                store.type === "online" ? onlineStoreImg : physicalStoreImg
-              }
-              title={store.name}
-              description={store.city} // optional for online stores
-              extraContent={
-                <a
-                  href={store.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 underline font-semibold mt-2"
-                >
-                  {store.type === "online" ? "Köp här" : "Besök sida"}
-                </a>
-              }
-              minHeight="200px"
-            />
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
+          {/* ONLINE STORES CARD */}
+          <Card
+            image={onlineStoreImg}
+            title="Onlinebutiker"
+            minHeight="300px"
+            extraContent={
+              <ul className="text-black text-sm space-y-3 pt-4">
+                {onlineStores.map((store, i) => (
+                  <li key={i}>
+                    <a
+                      href={store.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black underline underline-offset-4 font-semibold hover:text-gray-700"
+                    >
+                      {store.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            }
+          />
+
+          {/* PHYSICAL STORES CARD */}
+          <Card
+            image={physicalStoreImg}
+            title="Fysiska butiker"
+            minHeight="300px"
+            extraContent={
+              <ul className="text-black text-sm pt-4">
+                {physicalStores.map((store, i) => (
+                  <li key={i} className="mb-3">
+                    <span className="font-semibold">{store.name}</span> <br />
+                    {store.address && <span> {store.address}</span>}
+                    {store.city && <span> {store.city}</span>}
+                  </li>
+                ))}
+              </ul>
+            }
+          />
         </div>
       </section>
     </>

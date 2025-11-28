@@ -1,4 +1,3 @@
-import React from "react";
 import lilla_lia_regnbagen from "../assets/lilla-lia-och-regnbagen.jpeg";
 import lilla_lia_delfinerna from "../assets/lilla-lia-och-delfinerna.jpeg";
 
@@ -6,7 +5,26 @@ const LillaLia = () => {
   return (
     <>
       <section>
-        <section className="flex flex-col items-center justify-evenly gap-10 sm:mt-10 mb-10 py-20 px-6 bg-accent">
+        <section className="flex flex-col lg:flex-row items-center justify-evenly py-10 lg:py-20 sm:mt-10 lg:mb-10 px-6 bg-accent ">
+          <div className="flex flex-col justify-center lg:px-25">
+            <div>
+              <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center lg:text-left">
+                Att förstå högkänslighet <br /> – med Lilla Lia
+              </h2>
+              <p className="w-full font-second text-base leading-relaxed text-gray-800 text-center lg:text-left space-y-4">
+                Lilla Lia böckerna är en serie där de två första böckerna
+                släpptes den 12 oktober 2017. Böckerna handlar om ett
+                högkänsligt barn vid namn Lilla Lia och hennes fantasivän
+                Hubertus. Detta är enkla kärleksfulla berättelser där vi får se
+                världen ur ett högkänsligt barns perspektiv. Mitt mål med dessa
+                är att lyfta ämnet högkänslighet så att barnen ska få
+                igenkänning och vuxna ska uppmärksamma denna
+                personlighetsbeskrivning.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="flex flex-col items-center justify-evenly gap-10 sm:mt-10 mb-10 pt-10 px-6">
           <div className="flex flex-col md:flex-row gap-6 justify-evenly items-center">
             <div className="w-full lg:w-1/2">
               <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center lg:text-left">
@@ -51,25 +69,6 @@ const LillaLia = () => {
                 <br />
                 Boken lyfter den högkänsligas hörsel, överstimulans samt en
                 högkänsligs välmående av djur.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="flex flex-col lg:flex-row items-center justify-evenly py-20 sm:mt-10 mb-10 px-6 ">
-          <div className="flex flex-col justify-center w-1/2 gap-6">
-            <div className="w-full ">
-              <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center lg:text-left">
-                Att förstå högkänslighet – med Lilla Lia
-              </h2>
-              <p className="font-second text-base leading-relaxed text-gray-800 text-center lg:text-left space-y-4">
-                Lilla Lia böckerna är en serie där de två första böckerna
-                släpptes den 12 oktober 2017. Böckerna handlar om ett
-                högkänsligt barn vid namn Lilla Lia och hennes fantasivän
-                Hubertus. Detta är enkla kärleksfulla berättelser där vi får se
-                världen ur ett högkänsligt barns perspektiv. Mitt mål med dessa
-                är att lyfta ämnet högkänslighet så att barnen ska få
-                igenkänning och vuxna ska uppmärksamma denna
-                personlighetsbeskrivning.
               </p>
             </div>
           </div>
