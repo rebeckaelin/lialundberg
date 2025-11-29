@@ -5,7 +5,6 @@ export default defineType({
   type: 'document',
   title: 'Treatment Info Section',
   fields: [
-    // ⭐ SECTION 1
     defineField({
       name: 'section1Heading',
       type: 'string',
