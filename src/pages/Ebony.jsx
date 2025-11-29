@@ -1,34 +1,19 @@
 import ebony_image from "../assets/ebony.jpeg";
-import StoresGrid from "../components/StoresGrid";
+import { useEffect, useState } from "react";
+import { client } from "../client";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 
+const bookTestimonialsQuery = `*[_type == "testimonial" && category == "book"]{
+  text,
+  name
+}`;
+
 const Ebony = () => {
-  const bookTestimonials = [
-    {
-      text: `Jag har säkert läst boken nu 3-5ggr minst, varenda gång jag öppnat boken på nytt har jag fått ett ännu större perspektiv. Boken är både nervkittlande men samtidigt så utmanar Lia med sitt skrivande sökandet efter sin väg i livet och alla dess olika känslor som vi är så djupt formade utav (ex. barndom, umgänge, samhället etc.) och vad de känslorna försöker säga oss och hur vi kan lära oss genom känslor. Med det sagt vill jag trycka på att om du inte läst boken, gör det!`,
-      name: "Robyn",
-    },
-    {
-      text: `En medryckande och spännande historia med sagodeckare-tema. Huvudkaraktären Ebony är intressant, i ena stunden vill jag bara hålla om henne hårt och vagga henne. I nästa vill jag ruska om henne för att hon är så avig och omedgörlig x) men samtidigt så är det ju det som gör Ebony just Ebony.`,
-      name: "Bokdaling",
-    },
-    {
-      text: `En fängslande och annorlunda deckare som blandar medialt med kriminologi, älskade även den personliga kontakt som skapades mellan Ebony och polisen. Det fick mig att sträckläsa boken och att ivrigt längta till en uppföljare.`,
-      name: "Johanna",
-    },
-    {
-      text: `Jag fastnade direkt i storyn vilket inte är självklart.. jag är lite kräsen så om jag inte fastnar ganska direkt så blir boken liggande. Nu fastnade jag på en gång och det bästa med hela storyn var att jag inte visste vart det skulle ta vägen. Ingenting påminde direkt om någonting jag läst förut vilket är underbart. Blandningen av spänning och djup gillar jag och att det fanns så mkt under ytan hela tiden som man anade och ville åt och som skapade intresse och nyfikenhet att läsa vidare. Skulle gärna läsa en uppföljare om det kom en sådan!`,
-      name: "Kerstin",
-    },
-    {
-      text: `Jag läste ut boken idag, superspännande! Och är nu nyfiken på vad som händer med Ebony efter denna bok. Och Mr Hart såklart! Så ser fram emot nästa!`,
-      name: "Lisa",
-    },
-    {
-      text: `Efter att ha skrivit böcker för barn, där känslighet är ett märkbart tema, så är övergången till en psykologisk thriller ett stort steg. Men det har du klarat väldigt bra. Man känner att du trivs i den miljö du låter bokens huvudperson agera i. Känslan blir en ”sagovärld i nutid”. Det psykologiska tar över vad som kunnat bli en bloddrypande deckare, blir istället en annorlunda ”true crime”. Slutet, kanske något obestämt och lite frågande - men en helt klart tänk- och läsvärd debutroman!!`,
-      name: "Majken",
-    },
-  ];
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    client.fetch(bookTestimonialsQuery).then(setTestimonials);
+  }, []);
 
   return (
     <>
@@ -77,7 +62,7 @@ const Ebony = () => {
             />
           </div>
         </section>
-        <TestimonialCarousel testimonials={bookTestimonials} />
+        <TestimonialCarousel testimonials={testimonials} />
       </section>
     </>
   );
