@@ -2,6 +2,7 @@ const Card = ({
   image,
   title,
   description,
+  time,
   extraContent,
   minHeight,
   isExpanded,
@@ -34,6 +35,9 @@ const Card = ({
             {title}
           </h3>
         </div>
+      )}
+      {time && (
+        <div className="flex justify-center mt-4 text-black">{time}</div>
       )}
 
       {/* Description */}

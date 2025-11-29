@@ -12,6 +12,8 @@
   "dependencies": {
     "@iframe-resizer/child": "^5.5.7",
     "@iframe-resizer/parent": "^5.5.7",
+    "@portabletext/react": "^5.0.0",
+    "@sanity/client": "^7.13.1",
     "@tailwindcss/cli": "^4.1.4",
     "@tailwindcss/vite": "^4.1.4",
     "lucide-react": "^0.503.0",

@@ -12,14 +12,12 @@ const LillaLia = () => {
                 Att förstå högkänslighet – med Lilla Lia
               </h2>
               <p className="w-full font-second text-base leading-relaxed text-gray-800 text-center lg:text-left space-y-4">
-                Lilla Lia böckerna är en serie där de två första böckerna
-                släpptes den 12 oktober 2017. Böckerna handlar om ett
-                högkänsligt barn vid namn Lilla Lia och hennes fantasivän
-                Hubertus. Detta är enkla kärleksfulla berättelser där vi får se
-                världen ur ett högkänsligt barns perspektiv. Mitt mål med dessa
-                är att lyfta ämnet högkänslighet så att barnen ska få
-                igenkänning och vuxna ska uppmärksamma denna
-                personlighetsbeskrivning.
+                Barnboksserien handlar om ett högkänsligt barn vid namn Lilla
+                Lia och hennes fantasivän Hubertus. Detta är enkla kärleksfulla
+                berättelser där vi får se världen ur ett högkänsligt barns
+                perspektiv. Mitt mål med dessa är att lyfta ämnet högkänslighet
+                så att barnen ska få igenkänning och vuxna ska uppmärksamma
+                denna personlighetsbeskrivning.
               </p>
             </div>
           </div>

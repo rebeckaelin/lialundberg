@@ -21,7 +21,7 @@ export default function BookingModal({ isOpen, onClose }) {
           Hur vill du boka?
         </h2>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 font-second">
           <a
             href="https://www.instagram.com/lialundberg/"
             target="_blank"
