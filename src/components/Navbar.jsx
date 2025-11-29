@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { LiaBookSolid } from "react-icons/lia";
 import { useNavigate } from "react-router-dom";
-import mandala_two from "../assets/mandala_2.png";
 import symbol_transparent from "../assets/symbol_lia_transparent.png";
 
 export default function Navbar() {
@@ -82,6 +81,7 @@ export default function Navbar() {
               onMouseLeave={() => setIsHovered(false)}
             >
               <Link
+                to="/bocker"
                 className={
                   "flex items-center hover:underline underline-offset-10 gap-1"
                 }
@@ -162,7 +162,9 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link onClick={() => setMenuOpen(false)}>Böcker</Link>
+            <Link to="/bocker" onClick={() => setMenuOpen(false)}>
+              Böcker
+            </Link>
             <ul className="ml-4 mt-2 space-y-1 text-sm">
               {books.map(({ title, path }, index) => (
                 <li

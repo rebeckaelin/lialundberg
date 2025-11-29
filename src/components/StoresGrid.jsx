@@ -6,17 +6,17 @@ const stores = [
   {
     type: "online",
     name: "Bokus",
-    link: "https://www.bokus.com/bok/9789152798300/ebony/",
+    link: "https://www.bokus.com/cgi-bin/product_search.cgi?authors=Lia%20Lundberg",
   },
   {
     type: "online",
     name: "Akademibokhandeln",
-    link: "https://www.akademibokhandeln.se/bok/ebony/9789152798300",
+    link: "https://www.akademibokhandeln.se/forfattare/lia-lundberg",
   },
   {
     type: "online",
     name: "Adlibris",
-    link: "https://www.adlibris.com/sv/bok/ebony-9789152798300",
+    link: "https://www.adlibris.com/se/sok?filter=author%3ALia+Lundberg",
   },
   {
     type: "physical",

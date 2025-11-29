@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import LillaLia from "./pages/LillaLia.jsx";
 import Ebony from "./pages/Ebony.jsx";
 import Webshop from "./pages/Webshop.jsx";
+import Books from "./pages/Books.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/om-mig" element={<AboutPage />} />
         <Route path="/behandlingar" element={<TreatmentsPage />} />
+        <Route path="/bocker" element={<Books />} />
         <Route path="/bocker/lillalia" element={<LillaLia />} />
         <Route path="/bocker/ebony" element={<Ebony />} />
         <Route path="/webbshop" element={<Webshop />} />
