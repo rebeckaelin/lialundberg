@@ -3,15 +3,16 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 @theme {
-  --color-primary: #345457;
-  --color-secondary: #8d998a;
-  --color-accent: #e4e3d8;
-  --color-fourth: #eee6da;
+  --color-primary: #7d9d8c;
+  --color-secondary: #6a8576; /*aka hover color*/
+  --color-accent: #345457; /*aka footer color*/
+  --color-treatment: #dee6e2;
+
+  /* text-[#5a6c7d] text color*/
 
   --font-main: "Cinzel", serif;
   --font-second: "Raleway", sans-serif;
   --font-accent: "Cinzel Decorative", serif;
-  --color-light: rgb(249, 248, 246);
   --color-dark: rgb(75, 71, 68);
 }
 

@@ -17,7 +17,7 @@ export default function BookingModal({ isOpen, onClose }) {
           ×
         </button>
 
-        <h2 className="text-2xl font-main font-semibold text-center mb-6">
+        <h2 className="text-2xl font-second font-semibold text-center mb-6">
           Hur vill du boka?
         </h2>
 

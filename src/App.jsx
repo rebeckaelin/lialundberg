@@ -9,11 +9,13 @@ import LillaLia from "./pages/LillaLia.jsx";
 import Ebony from "./pages/Ebony.jsx";
 import Webshop from "./pages/Webshop.jsx";
 import Books from "./pages/Books.jsx";
+import Header from "./components/Header.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/om-mig" element={<AboutPage />} />

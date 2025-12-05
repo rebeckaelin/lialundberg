@@ -38,19 +38,45 @@ const TestimonialCarousel = ({ testimonials }) => {
   };
 
   return (
-    <div className="flex justify-center content-center mx-4 lg:m-12 pt-4 pb-8">
-      <div className="w-full  shadow-lg max-w-4xl">
+    <div className="flex justify-center content-center m-4 lg:m-12 pb-4">
+      <div className="w-full md:w-3/4 lg:w-2/3 shadow-lg max-w-4xl rounded-lg border border-accent">
         <Slider {...settings}>
           {testimonials.map((item, index) => (
-            <div
-              key={index}
-              className="testimonial-card w-full transition-transform  duration-700"
-            >
-              <div className=" flex flex-col justify-evenly bg-white m-10 px-10 text-center ">
-                <p className="italic text-black font-second text-sm sm:text-base leading-relaxed">
+            <div key={index} className="w-full px-4">
+              <div className="relative flex flex-col justify-evenly bg-white px-5 py-8 text-center">
+                {/* Opening quote — top left */}
+                <span
+                  className="
+                    absolute
+                    top-4 left-4
+                    text-7xl sm:text-7xl
+                    text-black/30
+                    font-serif
+                    select-none
+                  "
+                >
+                  “
+                </span>
+
+                <p className="italic text-black font-second p-8 text-base leading-relaxed relative z-10">
                   {item.text}
                 </p>
-                <p className="text-sm sm:text-base uppercase font-main font-semibold self-end mt-2">
+
+                {/* Closing quote — bottom right (opposite corner) */}
+                <span
+                  className="
+                    absolute
+                    bottom-4 right-4
+                    text-7xl sm:text-7xl
+                    text-black/30
+                    font-serif
+                    select-none
+                  "
+                >
+                  ”
+                </span>
+
+                <p className="text-sm sm:text-base uppercase font-main font-semibold self-center mt-8 relative z-10">
                   – {item.name}
                 </p>
               </div>

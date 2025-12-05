@@ -31,11 +31,11 @@ const AboutPage = () => {
 
   return (
     <>
-      <section>
+      <section className="text-black/80">
         {/* Section 1 */}
-        <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 sm:mt-10 mb-10 py-20 px-6 bg-accent">
+        <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 py-10 px-6 bg-primary/50">
           <div className="w-full lg:w-1/2">
-            <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl text-black pb-6 font-second font-semibold text-center lg:text-left">
               {content.section1Heading}
             </h2>
             <div className="font-second text-base leading-relaxed text-gray-800 text-center lg:text-left space-y-4">
@@ -52,7 +52,7 @@ const AboutPage = () => {
         </section>
 
         {/* Section 2 */}
-        <section className="flex flex-col lg:flex-row items-center justify-evenly px-6 pb-20">
+        <section className="flex flex-col lg:flex-row items-center justify-evenly py-10 gap-10 px-6 pb-10 lg:pt-10">
           <div className="w-[280px] sm:w-[350px] lg:w-[420px] h-[280px] sm:h-[350px] lg:h-[420px] rounded-full overflow-hidden">
             <img
               src={content.section2ImageUrl}
@@ -61,7 +61,7 @@ const AboutPage = () => {
             />
           </div>
           <div className="w-full lg:w-1/2">
-            <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl text-black pb-6 font-second font-semibold text-center lg:text-left">
               {content.section2Heading}
             </h2>
             <div className="font-second text-base leading-relaxed text-gray-800 text-center lg:text-left space-y-4">
@@ -71,9 +71,9 @@ const AboutPage = () => {
         </section>
 
         {/* Section 3 */}
-        <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 py-20 px-6 bg-accent">
+        <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 py-10 px-6 bg-primary/50">
           <div className="w-full lg:w-1/2">
-            <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl text-black pb-6 font-second font-semibold text-center lg:text-left">
               {content.section3Heading}
             </h2>
             <div className="font-second text-base leading-relaxed text-gray-800 text-center lg:text-left space-y-4">
@@ -90,7 +90,7 @@ const AboutPage = () => {
         </section>
 
         {/* Section 4 */}
-        <section className="flex flex-col lg:flex-row items-center justify-evenly py-10 px-6 lg:my-10">
+        <section className="flex flex-col lg:flex-row items-center justify-evenly py-5 px-6 lg:my-10">
           <div className="w-[300px] lg:w-[400px] h-auto">
             <img
               src={content.section4ImageUrl}
@@ -98,20 +98,20 @@ const AboutPage = () => {
               className="w-full h-full object-contain"
             />
           </div>
-          <div className="flex flex-col justify-center w-1/2 gap-6">
-            <div className="w-full ">
-              <h2 className="text-3xl sm:text-4xl py-6 font-main font-semibold text-center lg:text-left">
-                {content.section4Heading}
-              </h2>
-              <div className="font-second text-base leading-relaxed text-gray-800 text-center lg:text-left space-y-4">
-                <PortableText value={content.section4Body} />
-              </div>
+          <div className="flex flex-col sm:justify-start lg:w-1/2 items-center lg:items-start gap-6 pt-4">
+            {/* <div className=""> */}
+            <h2 className="text-3xl sm:text-4xl text-black font-second font-semibold text-center lg:text-left lg:text-left">
+              {content.section4Heading}
+            </h2>
+            <div className="font-second text-base leading-relaxed text-gray-800 text-center lg:text-left space-y-4">
+              <PortableText value={content.section4Body} />
             </div>
-            <div className="font-semibold font-main text-lg tracking-wider self-center lg:self-start">
-              <button className="border w-[200px] p-3 hover:cursor-pointer">
+            {/* </div> */}
+            <div className="">
+              <button className="w-[250px] font-second flex items-center justify-center gap-2 p-4 bg-[#2c3e50] text-white shadow-lg tracking-wider rounded-lg cursor-pointer hover:font-semibold text-lg">
                 <a href="https://www.instagram.com/lialundberg/">
                   {" "}
-                  INSPIRERAS HÄR
+                  Inspireras här
                 </a>
               </button>
             </div>

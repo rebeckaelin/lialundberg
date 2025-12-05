@@ -14,41 +14,24 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const books = [
-    { title: "Lilla Lia", path: "/bocker/lillalia" },
     { title: "Ebony", path: "/bocker/ebony" },
+    { title: "Lilla Lia", path: "/bocker/lillalia" },
   ];
 
   return (
     <>
       {/* Header with logo and mobile menu button */}
-      <header className="relative px-4 md:mt-20 py-2 sm:border-b flex items-center justify-between sm:justify-center">
-        <img
-          src={symbol_transparent}
-          alt="mandala"
-          className="
-    absolute 
-    -top-18 sm:-top-20 md:-top-48
-    left-1/2
-    -translate-x-1/2 
-    w-70  md:w-100
-    opacity-35
-    pointer-events-none 
-    select-none 
-    z-0
-  "
-        />
-
+      <header className="px-4 mt-10 pb-10 sm:border-b flex items-center justify-around sm:justify-center">
         <div
-          className="z-1 w-4/5 sm:w-auto flex flex-col  font-main my-10 gap-3 hover:cursor-pointer"
+          className="w-4/5 sm:w-auto flex flex-col  hover:cursor-pointer"
           onClick={() => navigate("/")}
         >
-          <h1 className="text-4xl sm:text-6xl md:text-8xl">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-main">
             <span className="font-accent">L</span>ia{" "}
             <span className="font-accent">L</span>undberg
           </h1>
-          <p className="font-second italic text-sm md:text-lg self-start sm:self-end">
-            {/* - terapeut & författare */}- Författare & terapeut med ett
-            konstnärligt hjärta
+          <p className="font-second italic text-sm md:text-base md:text-lg self-start sm:self-end pt-2">
+            {/* - terapeut & författare */} terapeut • författare • illustratör
           </p>
         </div>
         <button
@@ -61,8 +44,8 @@ export default function Navbar() {
       </header>
 
       {/* Desktop Navigation */}
-      <nav className="hidden sm:block mt-4 uppercase text-base">
-        <ul className="flex justify-evenly font-second text-primary relative">
+      <nav className="hidden sm:block my-4 text-black/80 uppercase text-base">
+        <ul className="flex justify-evenly font-second ">
           <li>
             <Link
               to="/behandlingar"

@@ -1,16 +1,19 @@
+import DividerLine from "../components/DividerLine.jsx";
+
 const Webshop = () => {
   return (
-    <div className="my-10 lg:my-20 w-full flex flex-col items-center">
-      <h2 className="text-2xl lg:text-4xl pb-6 px-8 font-main font-semibold text-center">
-        Välkommen till min lilla webbshop! <br /> - Här kan du köpa mina böcker
-        -
+    <div className="lg:my-10 w-full text-black/80 flex flex-col items-center font-second leading-relaxed">
+      <DividerLine />
+      <h2 className="text-2xl lg:text-4xl text-black px-8 pt-4 font-semibold text-center">
+        Välkommen till min webbshop
       </h2>
-      <p className="font-second text-base leading-relaxed italic text-gray-800 space-y-4 text-center pb-10">
-        *obs, notera att det för närvarande är det separata webbshopar för mina
+      <h3 className="text-lg pb-4">Här kan du köpa mina böcker</h3>
+      <p className="text-base  italic text-center pb-10">
+        *obs, notera att det för närvarande är två separata webbshopar för mina
         böcker*
       </p>
 
-      <div className="w-[90%] lg:flex flex-row gap-10 ">
+      <div className="w-[90%] flex flex-col lg:flex-row gap-10 ">
         <iframe
           title="Webshop"
           src="https://widget.publit.com/webshop/2819?embedType=embed"
@@ -26,7 +29,7 @@ const Webshop = () => {
         <iframe
           title="Webshop"
           src="https://widget.publit.com/webshop/5249?embedType=embed"
-          scrolling="no"
+          scrolling="yes"
           className="w-full"
           style={{
             border: "none",

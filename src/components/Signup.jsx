@@ -20,21 +20,22 @@ const Signup = () => {
   if (!content) return <div>Loading…</div>;
   return (
     <>
-      <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly py-20 mt-10 px-6 bg-accent">
+      <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly py-10 px-6 bg-treatment">
         {/* Image */}
-        <div className=" w-[180px] h-[180px]  border rounded-full p-6 flex items-center justify-center">
-          <img src={content.Image} alt="" className="" />
+        <div className=" w-[200px] h-[200px] my-4 flex items-center justify-center">
+          <img src={content.Image} alt="" className="scale-200" />
         </div>
         {/* Text content */}
-        <div className="w-3/4 lg:w-1/2">
-          <h2 className="text-3xl sm:text-2xl pb-6 font-main font-semibold text-center lg:text-left">
+        <div className="w-full lg:w-1/2">
+          {/* Subtil linje eller ornament som övergång */}
+          <h2 className="text-3xl sm:text-2xl pb-6 font-second font-semibold text-center lg:text-left">
             {content.Heading}
           </h2>
 
-          <div className="font-second text-base leading-relaxed text-gray-800 space-y-4 text-center lg:text-left">
+          <div className="font-second text-base leading-relaxed text-black/80 space-y-4 text-center lg:text-left">
             <PortableText value={content.Body} />
           </div>
-          <div className="flex gap-5 mt-6 justify-center lg:justify-start mb-6">
+          <div className="flex gap-5 mt-6 mb-8 justify-center lg:justify-start">
             <a
               href="https://www.facebook.com/forfattarinnaLialundberg"
               target="_blank"

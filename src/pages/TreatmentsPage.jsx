@@ -5,6 +5,7 @@ import TestimonialCarousel from "../components/TestimonialCarousel";
 import Card from "../components/Card";
 import BookingModal from "../components/BookingModal";
 import Signup from "../components/Signup";
+import DividerLine from "../components/DividerLine";
 
 const query = `*[_type == "TreatmentInfoSection"][0]{
   section1Heading,
@@ -26,11 +27,16 @@ const treatmentTestimonialsQuery = `*[_type == "testimonial" && category == "tre
 }`;
 
 const TreatmentsPage = () => {
-  const [expandedCards, setExpandedCards] = useState({});
   const [modalOpen, setModalOpen] = useState(false);
   const [treatments, setTreatments] = useState([]);
   const [content, setContent] = useState(null);
   const [testimonials, setTestimonials] = useState([]);
+
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  };
 
   // Control page scroll when modal is open
   useEffect(() => {
@@ -51,36 +57,33 @@ const TreatmentsPage = () => {
   }, []);
 
   // Fetch treatments
+  // Fetch treatments
   useEffect(() => {
     client.fetch(treatmentsQuery).then((data) => {
       setTreatments(data);
-      setExpandedCards(new Array(data.length).fill(false)); // array matches treatment length
     });
   }, []);
-
-  const toggleExpand = (index) => {
-    setExpandedCards((prev) => {
-      const newExpanded = [...prev];
-      newExpanded[index] = !newExpanded[index];
-      return newExpanded;
-    });
-  };
 
   if (!content || !treatments.length) return <div>Loading…</div>;
 
   return (
     <section className="">
-      <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 sm:mt-10 mb-10 py-20 px-6 bg-accent">
-        <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl sm:text-4xl pb-6 font-main font-semibold text-center lg:text-left">
+      <section className="relative flex flex-col-reverse lg:flex-row items-center justify-center p-6 lg:py-20 gap-10 bg-primary/25 overflow-hidden">
+        {/* Decorative circles */}
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-primary/10 -top-[300px] -right-[200px]"></div>
+        <div className="absolute w-[400px] h-[400px] rounded-full bg-primary/30 -bottom-[200px] -left-[100px]"></div>
+        <div className="w-full lg:w-1/2 relative">
+          {/* Subtil linje eller ornament som övergång */}
+          <div className="lg:hidden w-26 h-0.5 bg-primary mx-auto mb-12"></div>
+          <h2 className="text-3xl sm:text-4xl pb-6 font-second font-semibold text-center lg:text-left">
             {content.section1Heading}
           </h2>
 
-          <div className="font-second text-base leading-relaxed text-gray-800 space-y-4 text-center lg:text-left">
+          <div className="font-second text-base leading-relaxed text-black/80 space-y-4 text-center lg:text-left">
             <PortableText value={content.section1Body} />
           </div>
         </div>
-        <div className="w-[280px] sm:w-[350px] lg:w-[420px] h-[280px] sm:h-[350px] lg:h-[420px] rounded-full overflow-hidden">
+        <div className="z-10 w-[280px] sm:w-[350px] lg:w-[420px] h-[280px] sm:h-[350px] lg:h-[420px] rounded-full overflow-hidden">
           <img
             src={content.section1ImageUrl}
             alt=""
@@ -89,26 +92,21 @@ const TreatmentsPage = () => {
         </div>
       </section>
 
-      <section className="flex justify-center my-20">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-15 px-6">
-          {treatments.map((treatment, index) => (
+      <section className="flex justify-center my-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 px-6 items-start">
+          {treatments.map((t, i) => (
             <Card
-              key={index}
-              image={treatment.imageUrl}
-              title={treatment.title}
-              time={treatment.time}
-              description={
-                expandedCards[index]
-                  ? treatment.description
-                  : treatment.description.slice(0, 120) + "..."
-              }
-              isExpanded={expandedCards[index]}
-              onToggle={() => toggleExpand(index)}
-              toggleVisible={treatment.description.length > 120}
-              minHeight="400px"
+              key={i}
+              image={t.imageUrl}
+              title={t.title}
+              time={t.time}
+              description={t.description}
+              isExpanded={expandedIndex === i}
+              onToggle={() => toggleExpand(i)}
+              toggleVisible={t.description.length > 120}
               extraContent={
-                <p className="text-md font-semibold text-black mt-8">
-                  {treatment.price}
+                <p className="text-md font-semibold text-black/80 mt-4">
+                  {t.price}
                 </p>
               }
             />
@@ -116,82 +114,23 @@ const TreatmentsPage = () => {
         </div>
       </section>
 
-      <div className="flex justify-center pb-8 font-semibold font-main text-2xl tracking-wider">
+      <div className="flex justify-center pb-8 font-second ">
         <button
-          className="border w-[200px] p-3 cursor-pointer"
+          className="w-[250px] flex items-center justify-center gap-2 p-4 bg-[#2c3e50] text-white shadow-lg tracking-wider rounded-lg cursor-pointer hover:font-semibold text-lg"
           onClick={() => setModalOpen(true)}
         >
-          BOKA
+          {" "}
+          Boka
         </button>
       </div>
       <BookingModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-
-      <Signup />
+      <DividerLine />
       {/* <section className="overflow- p-6"> */}
       <TestimonialCarousel testimonials={testimonials} />
       {/* </section> */}
+      <Signup />
     </section>
   );
 };
 
 export default TreatmentsPage;
-
-/* 
-
-     <section className="flex justify-center my-20">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-15 px-6">
-          {treatments.map((treatment, index) => (
-            <div
-              key={index}
-              className="bg-fourth font-second border shadow-2xl text-white w-auto min-w-[200px] max-w-[350px] min-h-[480px] grid grid-rows-[auto_auto_1fr_auto_auto] mt-20"
-            >
-              <div className="relative w-[150px] h-[150px] -mt-24 justify-self-center">
-                <div className="w-full h-full rounded-full bg-white p-2 box-content">
-                  <img
-                    src={treatment.image}
-                    alt={treatment.title}
-                    className="h-full object-contain rounded-full"
-                  />
-                </div>
-              </div>
-
-              <div className="flex justify-center items-center pt-8">
-                <h3 className="relative text-black inline-block font-main uppercase text-2xl text-[#2e4c3a] custom-underline">
-                  {treatment.title}
-                </h3>
-              </div>
-
-              <div className="flex flex-col px-4 text-center pt-6">
-                <p className="text-sm text-black">{treatment.time}</p>
-
-                <p
-                  className={`text-sm mt-2 text-black transition-all duration-300 ${
-                    expandedCards[index] ? "" : "line-clamp-5"
-                  }`}
-                >
-                  {treatment.description}
-                </p>
-               
-                {treatment.description.length > 120 && (
-                  <button
-                    className="text-xs text-[#2e4c3a] underline underline-offset-4 mt-4 self-center"
-                    onClick={() => toggleExpand(index)}
-                  >
-                    {expandedCards[index] ? "Visa mindre" : "Visa mer"}
-                  </button>
-                )}
-              </div>
-
-              <div></div>
-
-              <div className="flex justify-center items-center pb-8">
-                <p className="text-md font-semibold text-black">
-                  {treatment.price}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-*/
