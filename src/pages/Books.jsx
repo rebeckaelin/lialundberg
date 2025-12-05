@@ -18,7 +18,7 @@ const Books = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col-reverse lg:flex-row items-center justify-center mt-10 p-6 lg:py-20 gap-10 bg-primary/25 overflow-hidden">
+      <section className="relative flex flex-col-reverse lg:flex-row items-center justify-center  p-6 lg:py-20 gap-10 bg-primary/25 overflow-hidden">
         {/* Decorative circles */}
         <div className="absolute w-[300px] h-[300px] rounded-full bg-primary/10 -top-[200px] -right-[100px]"></div>
         <div className="absolute w-[300px] h-[300px] rounded-full bg-primary/30 -bottom-[180px] -left-[120px]"></div>

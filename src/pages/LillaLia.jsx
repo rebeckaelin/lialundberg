@@ -82,7 +82,7 @@ const LillaLia = () => {
       </section>
 
       {/* Books Section */}
-      <section className="py-16 px-6">
+      <section className="pt-16 px-6">
         <div className="max-w-6xl mx-auto">
           {books.map((book, index) => (
             <div key={index}>
@@ -188,7 +188,7 @@ const LillaLia = () => {
       </section>
 
       {/* About Sensitivity Section */}
-      <section className="py-16 px-6 bg-gradient-to-b from-white to-[#7d9d8c]/5">
+      <section className="pb-16 px-6 bg-gradient-to-b from-white to-[#7d9d8c]/5">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-second font-semibold text-[#2c3e50] mb-4">
