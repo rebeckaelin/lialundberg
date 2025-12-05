@@ -70,7 +70,7 @@ const NewsFeed = () => {
                   e.preventDefault();
                   setShowAll(!showAll);
                 }}
-                className="w-[250px] inline-flex items-center justify-center px-8 py-4 bg-[#2c3e50] text-white font-second tracking-wider rounded-lg  hover:font-semibold cursor-pointer gap-1 text-lg"
+                className="w-[260px] inline-flex items-center justify-center px-8 py-4 bg-[#2c3e50] text-white font-second tracking-wider rounded-lg  hover:font-semibold cursor-pointer gap-1 text-lg"
               >
                 {showAll ? "Visa färre nyheter" : "Visa fler nyheter"}
                 <ChevronDown
