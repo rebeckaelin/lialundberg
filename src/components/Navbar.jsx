@@ -30,7 +30,7 @@ export default function Navbar() {
             <span className="font-accent">L</span>ia{" "}
             <span className="font-accent">L</span>undberg
           </h1>
-          <p className="font-second italic text-sm md:text-base md:text-lg self-start sm:self-end pt-2">
+          <p className="font-second italic text-sm md:text-base md:text-lg self-start sm:self-end pt-2 tracking-wide">
             {/* - terapeut & författare */} terapeut • författare • illustratör
           </p>
         </div>

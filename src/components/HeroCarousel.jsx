@@ -8,7 +8,7 @@ const urlFor = (src) => builder.image(src).url();
 
 const HeroCarousel = ({ images }) => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 800,
     autoplay: true,
@@ -22,7 +22,7 @@ const HeroCarousel = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-[600px] overflow-hidden">
       {/* Buttons container: fixed on top of slider */}
       <div className="absolute inset-0 flex flex-col lg:flex-row justify-center items-center font-second gap-6 z-20 pointer-events-auto">
         <a
@@ -51,7 +51,7 @@ const HeroCarousel = ({ images }) => {
         {images.map((item, index) => (
           <div key={index}>
             <div
-              className="w-full h-[500px] bg-cover bg-center"
+              className="w-full h-[600px] bg-cover bg-center"
               style={{
                 backgroundImage: `url(${urlFor(item.image)})`,
               }}
