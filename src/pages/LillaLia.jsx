@@ -99,11 +99,11 @@ const LillaLia = () => {
                     <div
                       className={`absolute inset-0 ${
                         index % 2 === 0 ? "bg-blue-300/30" : "bg-purple-300/30"
-                      } rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500`}
+                      } rounded-3xl blur-2xl group-hover:blur-2xl transition-all duration-500`}
                     ></div>
 
                     {/* Book image */}
-                    <div className="relative bg-white rounded-3xl p-4 shadow-xl transform group-hover:scale-105 transition-transform duration-500">
+                    <div className="relative bg-white rounded-3xl p-4 shadow-xl ">
                       <img
                         src={book.image}
                         alt={book.title}
