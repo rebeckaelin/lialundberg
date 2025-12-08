@@ -1,4 +1,3 @@
-import ebony_image from "../assets/ebony.jpeg";
 import { useEffect, useState } from "react";
 import { client } from "../client";
 import TestimonialCarousel from "../components/TestimonialCarousel";
@@ -12,7 +11,11 @@ const bookTestimonialsQuery = `*[_type == "testimonial" && category == "book"]{
 }`;
 
 const ebonyQuery = `*[_type == "ebonyPage"][0]{
-  hero { title, subtitle, shortDescription },
+  hero { title, subtitle, shortDescription, image {
+        asset-> {
+          url
+        }
+      },  },
   synopsis { body, highlight },
   badges
 }`;
@@ -52,8 +55,8 @@ const Ebony = () => {
                 {/* Book cover */}
                 <div className="relative">
                   <img
-                    src={ebony_image}
-                    alt="Ebony book cover"
+                    src={hero.image.asset.url}
+                    alt={hero.title + " book cover"}
                     className="w-[280px] sm:w-[320px] lg:w-[360px] h-auto rounded-lg"
                   />
                 </div>

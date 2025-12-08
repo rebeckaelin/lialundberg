@@ -1,19 +1,43 @@
-import StoresGrid from "../components/StoresGrid";
-import ebony_2 from "../assets/ebony_2.jpg";
-import lillalia_1 from "../assets/lilla-lia-och-regnbagen.jpeg";
-import lillalia_2 from "../assets/lilla-lia-och-delfinerna.jpeg";
-import lillalia_3 from "../assets/lillalia_och_den_stora_tåren.png";
-import lillalia_4 from "../assets/lillalia_och_skogen.png";
+import { useEffect, useState } from "react";
+import { client } from "../client";
 import { ChevronRight } from "lucide-react";
 import DividerLine from "../components/DividerLine";
 
 const Books = () => {
-  const childrenBooks = [
-    { src: lillalia_1, title: "Lilla Lia och Regnbågen" },
-    { src: lillalia_2, title: "Lilla Lia och Delfinerna" },
-    { src: lillalia_3, title: "Lillalia och den Stora Tåren" },
-    { src: lillalia_4, title: "Lillalia och Skogen" },
-  ];
+  const [pageData, setPageData] = useState(null);
+
+  const query = `*[_type == "booksPage"][0]{
+    hero { description },
+    novel { 
+      title, 
+      image {
+        asset-> {
+          url
+        }
+      }, 
+      description 
+    },
+    childrenBooks { 
+      title, 
+      description,
+      books[]{ 
+        title, 
+        image {
+          asset-> {
+            url
+          }
+        } 
+      }
+    }
+  }`;
+
+  useEffect(() => {
+    client.fetch(query).then(setPageData);
+  }, []);
+
+  if (!pageData) return <div>Loading…</div>;
+
+  const { hero, novel, childrenBooks } = pageData;
 
   return (
     <>
@@ -30,8 +54,7 @@ const Books = () => {
             Mina Böcker
           </h1> */}
             <p className="text-lg sm:text-xl font-second text-black tracking-wide font-semibold max-w-3xl mx-auto">
-              Upptäck historier som berör, inspirerar och underhåller läsare i
-              alla åldrar.
+              {hero.description}
             </p>
           </div>
         </div>
@@ -48,8 +71,8 @@ const Books = () => {
                 <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl">
                   <img
                     className="w-full h-full object-cover"
-                    src={ebony_2}
-                    alt="Ebony"
+                    src={novel.image.asset.url}
+                    alt={novel.title}
                   />
                 </div>
               </div>
@@ -64,12 +87,11 @@ const Books = () => {
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-main font-bold text-black">
-                Ebony
+                {novel.title}
               </h2>
 
               <p className="text-lg font-second text-gray-700 leading-relaxed">
-                En fartfylld berättelse där en ung kvinna ställs för valet att
-                välja mellan en nyfunnen godhet eller pulshöjande ondska.
+                {novel.description}
               </p>
 
               <button className="w-[250px] flex items-center justify-center gap-2 p-4 bg-[#2c3e50] text-white shadow-lg tracking-wider rounded-lg cursor-pointer hover:font-semibold text-lg">
@@ -92,11 +114,10 @@ const Books = () => {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-main font-bold  mb-4">
-              Lilla Lia-serien
+              {childrenBooks.title}
             </h2>
             <p className="text-lg font-second md:text-center text-black/80 max-w-2xl mb-6">
-              Kärleksfulla berättelser om hur en högkänslig flicka upplever
-              olika möten och känslor.
+              {childrenBooks.description}
             </p>
             <button className="w-[250px] flex items-center justify-center gap-2 p-4 bg-[#2c3e50] text-white shadow-lg tracking-wider rounded-lg cursor-pointer hover:font-semibold text-lg">
               <a href="/bocker/lillalia">Läs mer här</a>
@@ -106,13 +127,13 @@ const Books = () => {
 
           {/* Books Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {childrenBooks.map((book, i) => (
+            {childrenBooks.books.map((book, i) => (
               <div key={i} className="">
                 <div className="relative overflow-hidden rounded-xl bg-white shadow-lg -2xl ">
                   <div className="aspect-[3/4] overflow-hidden bg-white">
                     <img
                       className="w-full h-full object-contain p-4 "
-                      src={book.src}
+                      src={book.image.asset.url}
                       alt={book.title}
                     />
                   </div>
@@ -127,21 +148,6 @@ const Books = () => {
           </div>
         </div>
       </section>
-
-      {/* Retailers Section */}
-      {/* <section className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-main font-bold text-[#2c3e50] mb-4">
-              Återförsäljare
-            </h2>
-            <p className="text-lg font-second text-gray-700 max-w-2xl mx-auto">
-              Köp mina böcker hos dessa utvalda återförsäljare
-            </p>
-          </div>
-          <StoresGrid />
-        </div>
-      </section> */}
     </>
   );
 };

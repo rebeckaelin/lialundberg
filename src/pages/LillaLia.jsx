@@ -53,6 +53,11 @@ const LillaLia = () => {
     <>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#7d9d8c]/20 via-purple-50 to-blue-50 py-16 px-6">
+        {" "}
+        {/* Playful background elements */}{" "}
+        <div className="absolute top-10 right-10 w-32 h-32 bg-yellow-200/30 rounded-full blur-2xl"></div>{" "}
+        <div className="absolute bottom-20 left-10 w-40 h-40 bg-pink-200/30 rounded-full blur-2xl"></div>{" "}
+        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-blue-200/30 rounded-full blur-xl"></div>
         <div className="relative max-w-5xl mx-auto text-center">
           {/* Badge */}
           {hero.badge && (
@@ -93,12 +98,22 @@ const LillaLia = () => {
               >
                 {/* Book Image */}
                 <div className="lg:w-2/5">
-                  <div className="relative bg-white rounded-3xl p-4 shadow-xl">
-                    <img
-                      src={book.image.asset.url}
-                      alt={book.title}
-                      className="w-[280px] sm:w-[320px] lg:w-[360px] h-auto rounded-2xl mx-auto"
-                    />
+                  <div className="relative group">
+                    {/* Colorful glow effect */}
+                    <div
+                      className={`absolute inset-0 ${
+                        index % 2 === 0 ? "bg-blue-300/30" : "bg-purple-300/30"
+                      } rounded-3xl blur-2xl group-hover:blur-2xl transition-all duration-500`}
+                    ></div>
+
+                    {/* Book image */}
+                    <div className="relative bg-white rounded-3xl p-4 shadow-xl">
+                      <img
+                        src={book.image.asset.url}
+                        alt={book.title}
+                        className="w-[280px] sm:w-[320px] lg:w-[360px] h-auto rounded-2xl mx-auto"
+                      />
+                    </div>
                   </div>
                 </div>
 

@@ -15,6 +15,12 @@ export default {
           title: 'Short Description (above buttons)',
           type: 'text',
         },
+        {
+          name: 'image',
+          title: 'Book Cover Image',
+          type: 'image',
+          options: {hotspot: true},
+        },
       ],
     },
     {

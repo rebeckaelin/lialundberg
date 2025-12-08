@@ -6,7 +6,7 @@ const WhereToBuy = ({ title, links, webbshop }) => {
   return (
     <section id="buy" className="py-20 px-6 bg-primary">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-main font-bold text-white mb-6">
+        <h2 className="text-3xl sm:text-4xl font-second font-bold text-white mb-6">
           {title}
         </h2>
         <p className="text-lg font-second text-white/90 mb-12">
