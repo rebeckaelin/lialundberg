@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { client } from "../client";
 import DividerLine from "../components/DividerLine";
 import WhereToBuy from "../components/WhereToBuy";
+import { ChevronRight } from "lucide-react";
 
 // Book images will come from Sanity
 // We'll maintain a consistent size: width 360px (desktop), scale down on mobile
@@ -116,31 +117,42 @@ const LillaLia = () => {
                     </div>
                   </div>
                 </div>
-
                 {/* Book Content */}
                 <div className="lg:w-3/5">
-                  {/* Book Number Badge */}
+                  {/* Book number badge */}
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#7d9d8c]/10 rounded-full mb-4">
                     <span className="text-sm font-second text-[#7d9d8c] font-semibold">
                       Bok {index + 1}
                     </span>
                   </div>
-
+                  {/* Title */}
                   <h2 className="text-3xl sm:text-4xl font-main font-bold text-[#2c3e50] mb-6">
                     {book.title}
                   </h2>
-
-                  <p className="font-second text-lg leading-relaxed text-gray-700 mb-4">
-                    {book.description}
-                  </p>
-
-                  {book.themes && (
-                    <div className="bg-[#7d9d8c]/10 border-l-4 border-[#7d9d8c] p-6 rounded-r-lg mt-8">
-                      <p className="font-second text-lg leading-relaxed text-[#2c3e50] font-semibold italic">
+                  {/* Description */}
+                  <div className="space-y-4">
+                    <p className="font-second text-lg leading-relaxed text-gray-700">
+                      {book.description}
+                    </p>
+                    {/* Themes callout */}
+                    <div className="bg-primary/10 border-l-4 border-[#7d9d8c] p-4 rounded-r-lg">
+                      <p className="font-second text-base leading-relaxed text-gray-800 italic">
+                        <span className="font-semibold not-italic text-[#2c3e50]">
+                          Tema:{" "}
+                        </span>
                         {book.themes}
                       </p>
                     </div>
-                  )}
+                  </div>
+                  {/* Buy button */}
+                  <div className="mt-6">
+                    <a
+                      href="#buy"
+                      className="w-[250px] flex items-center justify-center gap-2 p-4 bg-primary font-second text-white shadow-lg tracking-wider rounded-lg cursor-pointer hover:font-semibold text-lg"
+                    >
+                      Köp boken <ChevronRight size={16} />
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -246,12 +258,21 @@ const LillaLia = () => {
           </div>
         </section>
       )}
-      {/* Where to Buy Section */}{" "}
-      <WhereToBuy
-        title="Köp Lilla Lia-böckerna"
-        links={links}
-        webbshop={webbshop}
-      />
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#7d9d8c]/20 via-purple-50 to-blue-50 py-16 px-6">
+        {" "}
+        {/* Playful background elements */}{" "}
+        <div className="absolute top-10 right-10 w-32 h-32 bg-yellow-200/30 rounded-full blur-2xl"></div>{" "}
+        <div className="absolute bottom-20 left-10 w-40 h-40 bg-pink-200/30 rounded-full blur-2xl"></div>{" "}
+        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-blue-200/30 rounded-full blur-xl"></div>
+        <div className="relative max-w-5xl mx-auto text-center">
+          {/* Where to Buy Section */}{" "}
+          <WhereToBuy
+            title="Köp Lilla Lia-böckerna"
+            links={links}
+            webbshop={webbshop}
+          />
+        </div>
+      </section>
     </>
   );
 };

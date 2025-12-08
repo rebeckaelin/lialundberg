@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const WhereToBuy = ({ title, links, webbshop }) => {
   return (
-    <section id="buy" className="py-20 px-6 bg-primary">
+    <section id="buy" className=" px-6 ">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-second font-bold text-white mb-6">
+        <h2 className="text-3xl sm:text-4xl font-second font-bold text-black mb-6">
           {title}
         </h2>
-        <p className="text-lg font-second text-white/90 mb-12">
+        <p className="text-lg font-second text-black/80 mb-12">
           Tillgänglig hos följande återförsäljare
         </p>
 
@@ -18,7 +18,7 @@ const WhereToBuy = ({ title, links, webbshop }) => {
           <div className="flex justify-center mb-8">
             <Link
               to={webbshop.href}
-              className="px-8 py-4 bg-[#2c3e50] text-white font-second w-[260px] hover:font-semibold rounded-lg hover:font-semiboldshadow-lg"
+              className="px-8 py-4 bg-[#2c3e50] text-white font-second w-[260px] rounded-lg hover:font-semibold shadow-lg"
             >
               {webbshop.label}
             </Link>

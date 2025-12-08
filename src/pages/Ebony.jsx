@@ -121,7 +121,7 @@ const Ebony = () => {
               ))}
 
               {synopsis.highlight && (
-                <div className="bg-[#7d9d8c]/10 border-l-4 border-[#7d9d8c] p-6 rounded-r-lg mt-8">
+                <div className="bg-primary/10 border-l-4 border-[#7d9d8c] p-6 rounded-r-lg mt-8">
                   <p className="font-second text-lg leading-relaxed text-[#2c3e50] font-semibold italic">
                     {synopsis.highlight}
                   </p>

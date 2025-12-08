@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { client } from "../client";
 import { ChevronRight } from "lucide-react";
 import DividerLine from "../components/DividerLine";
+import { Link } from "react-router-dom";
 
 const Books = () => {
   const [pageData, setPageData] = useState(null);
@@ -95,7 +96,7 @@ const Books = () => {
               </p>
 
               <button className="w-[250px] flex items-center justify-center gap-2 p-4 bg-[#2c3e50] text-white shadow-lg tracking-wider rounded-lg cursor-pointer hover:font-semibold text-lg">
-                <a href="bocker/ebony"> Läs mer här</a>
+                <Link to="ebony"> Läs mer här</Link>
                 <ChevronRight size={16} />
               </button>
             </div>
@@ -120,7 +121,7 @@ const Books = () => {
               {childrenBooks.description}
             </p>
             <button className="w-[250px] flex items-center justify-center gap-2 p-4 bg-[#2c3e50] text-white shadow-lg tracking-wider rounded-lg cursor-pointer hover:font-semibold text-lg">
-              <a href="/bocker/lillalia">Läs mer här</a>
+              <Link to="lillalia">Läs mer här</Link>
               <ChevronRight size={16} />
             </button>
           </div>
@@ -137,11 +138,6 @@ const Books = () => {
                       alt={book.title}
                     />
                   </div>
-                  {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#2c3e50]/90 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-sm font-second font-semibold text-center">
-                      {book.title}
-                    </p>
-                  </div> */}
                 </div>
               </div>
             ))}
