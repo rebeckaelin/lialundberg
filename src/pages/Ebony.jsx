@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { client } from "../client";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 import DividerLine from "../components/DividerLine";
-import Badge from "../components/Badge";
 import { Link } from "react-router-dom";
+import Badge from "../components/Badge";
 
 const bookTestimonialsQuery = `*[_type == "testimonial" && category == "book"]{
   text,

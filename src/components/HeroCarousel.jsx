@@ -27,20 +27,20 @@ const HeroCarousel = ({ images }) => {
       {/* Buttons container: fixed on top of slider */}
       <div className="absolute inset-0 flex flex-col lg:flex-row justify-center items-center font-second gap-6 z-20 pointer-events-auto">
         <Link
-          href="/behandlingar"
+          to="/behandlingar"
           className="w-[250px] text-center py-4 bg-white/90 text-black/80 tracking-wider rounded-lg transition-all duration-300 hover:bg-[#2c3e50] hover:text-white text-lg "
         >
           Boka behandling
         </Link>
         <Link
-          href="/bocker"
+          to="/bocker"
           className="w-[250px] text-center py-4 bg-white/90 shadow-lg text-black/80  tracking-wider rounded-lg transition-all duration-300 hover:bg-[#2c3e50] hover:text-white text-lg "
         >
           Läs om mina böcker
         </Link>
 
         <Link
-          href="/webbshop"
+          to="/webbshop"
           className="w-[250px] text-center py-4 bg-white/90 text-black/80 shadow-lg tracking-wider rounded-lg transition-all duration-300 hover:bg-[#2c3e50] hover:text-white text-lg "
         >
           Webbshop
