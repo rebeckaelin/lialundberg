@@ -109,7 +109,10 @@ const AboutPage = () => {
             {/* </div> */}
             <div className="">
               <button className="w-[250px] font-second flex items-center justify-center gap-2 p-4 bg-[#2c3e50] text-white shadow-lg tracking-wider rounded-lg cursor-pointer hover:font-semibold text-lg">
-                <a href="https://www.instagram.com/lialundberg/">
+                <a
+                  rel="noopener noreferrer"
+                  href="https://www.instagram.com/lialundberg/"
+                >
                   {" "}
                   Inspireras här
                 </a>
