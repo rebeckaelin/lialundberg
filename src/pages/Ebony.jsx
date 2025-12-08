@@ -236,7 +236,7 @@ const Ebony = () => {
       )}
 
       {/* Where to Buy Section */}
-      <section id="buy" className="py-20 px-6 bg-[#2c3e50]">
+      <section id="buy" className="py-20 px-6 bg-[#2c3e50] ">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-second font-semibold text-white mb-6">
             Köp Ebony

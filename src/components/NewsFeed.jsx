@@ -28,7 +28,7 @@ const NewsFeed = () => {
         {/* <div className="absolute w-[400px] h-[400px] rounded-full bg-white/20 -top-[200px] -right-[100px]"></div>
         <div className="absolute w-[300px] h-[300px] rounded-full bg-primary/5 -bottom-[150px] -left-[50px]"></div> */}
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           {/* Section header */}
           <div className=" mb-16 flex flex-col items-center">
             <DividerLine />

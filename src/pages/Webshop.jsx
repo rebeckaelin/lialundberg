@@ -2,13 +2,13 @@ import DividerLine from "../components/DividerLine.jsx";
 
 const Webshop = () => {
   return (
-    <div className="lg:my-10 w-full text-black/80 flex flex-col items-center font-second leading-relaxed">
-      <DividerLine />
-      <h2 className="text-2xl lg:text-4xl text-black px-8 pt-4 font-semibold text-center">
+    <div className=" w-full text-black/80 flex flex-col items-center font-second bg-primary/40 leading-relaxed pb-10">
+      {/* <DividerLine /> */}
+      <h2 className="text-2xl lg:text-4xl text-black px-8 pt-4 font-semibold text-center mt-10">
         Välkommen till min webbshop
       </h2>
       <h3 className="text-lg pb-4">Här kan du köpa mina böcker</h3>
-      <p className="text-base  italic text-center pb-10">
+      <p className="text-base italic text-center pb-10">
         *obs, notera att det för närvarande är två separata webbshopar för mina
         böcker*
       </p>
