@@ -252,54 +252,6 @@ const LillaLia = () => {
         links={links}
         webbshop={webbshop}
       />
-      ;
-      {/* <section
-        id="buy"
-        className="py-20 px-6 bg-gradient-to-br from-[#7d9d8c] to-[#6a8576]"
-      >
-        {" "}
-        <div className="max-w-4xl mx-auto text-center">
-          {" "}
-          <h2 className="text-3xl sm:text-4xl font-second font-bold text-white mb-6">
-            {" "}
-            Köp Lilla Lia-böckerna{" "}
-          </h2>{" "}
-          <p className="text-lg font-second text-white/90 mb-12">
-            {" "}
-            Tillgänglig hos följande återförsäljare{" "}
-          </p>{" "}
-          <div className="flex flex-wrap justify-center gap-4">
-            {" "}
-            <a
-              href="https://www.adlibris.com/se/sok?filter=author%3ALia+Lundberg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-white text-black/80 font-second w-[250px] hover:font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
-            >
-              {" "}
-              Adlibris{" "}
-            </a>{" "}
-            <a
-              href="https://www.bokus.com/cgi-bin/product_search.cgi?authors=Lia%20Lundberg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-white text-black/80 font-second w-[250px] hover:font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
-            >
-              {" "}
-              Bokus{" "}
-            </a>{" "}
-            <a
-              href="https://www.akademibokhandeln.se/forfattare/lia-lundberg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-white text-black/80 font-second w-[250px] hover:font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
-            >
-              {" "}
-              Akdemibokhandeln{" "}
-            </a>{" "}
-          </div>{" "}
-        </div>{" "}
-      </section> */}
     </>
   );
 };
