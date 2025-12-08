@@ -175,7 +175,7 @@ const LillaLia = () => {
       </section>
       {/* Sensitivity Cards Section */}
       {sensitivityCards.length > 0 && (
-        <section className="pb-16 px-6 bg-gradient-to-b from-white to-[#7d9d8c]/5">
+        <section className="pb-16 px-6 mt-30">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-second font-semibold text-[#2c3e50] mb-4">
@@ -233,10 +233,10 @@ const LillaLia = () => {
                         </svg>
                       )}
                     </div>
-                    <h3 className="text-xl font-second font-bold text-[#2c3e50] mb-3">
+                    <h3 className="text-xl font-second font-bold text-black mb-3">
                       {card.title}
                     </h3>
-                    <p className="font-second text-gray-700 leading-relaxed">
+                    <p className="font-second text-black/80 leading-relaxed">
                       {card.description}
                     </p>
                   </div>
