@@ -233,7 +233,7 @@ const LillaLia = () => {
                         </svg>
                       )}
                     </div>
-                    <h3 className="text-xl font-main font-bold text-[#2c3e50] mb-3">
+                    <h3 className="text-xl font-second font-bold text-[#2c3e50] mb-3">
                       {card.title}
                     </h3>
                     <p className="font-second text-gray-700 leading-relaxed">
