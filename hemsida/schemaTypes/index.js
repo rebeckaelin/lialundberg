@@ -1,5 +1,8 @@
+import LillaLia from '../../src/pages/LillaLia'
 import about from './about'
+import ebony from './ebony'
 import heroCarousel from './heroCarousel'
+import lillalia from './lillalia'
 
 import signupSection from './signupSection'
 import testimonials from './testimonials'
@@ -19,4 +22,6 @@ export const schemaTypes = [
   updatePosts,
   heroCarousel,
   welcomeSection,
+  ebony,
+  lillalia,
 ]

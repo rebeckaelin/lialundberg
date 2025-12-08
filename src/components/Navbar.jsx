@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { LiaBookSolid } from "react-icons/lia";
 import { useNavigate } from "react-router-dom";
 import symbol_transparent from "../assets/symbol_lia_transparent.png";
+import BookIcon from "./BookIcon";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -91,7 +92,7 @@ export default function Navbar() {
                 <ul className="flex flex-col gap-4 mt-4">
                   {books.map(({ title, path }, index) => (
                     <li key={index} className="flex items-center gap-2">
-                      <LiaBookSolid />
+                      <BookIcon className="w-5 h-5" />
                       <Link to={path}>
                         <span>{title}</span>
                       </Link>

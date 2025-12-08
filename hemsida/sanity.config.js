@@ -7,8 +7,14 @@ export default defineConfig({
   name: 'default',
   title: 'hemsida',
 
+  // projectId: import.meta.env.SANITY_PROJECT_ID,
+  // dataset: import.meta.env.SANITY_DATASET,
   projectId: '2wf26oig',
   dataset: 'production',
+
+  deployment: {
+    appId: 'zc58v5vlqvidr8731jzmmzk8',
+  },
 
   plugins: [structureTool(), visionTool()],
 

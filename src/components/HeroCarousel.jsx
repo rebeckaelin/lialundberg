@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../client";
+import { Link } from "react-router-dom";
 
 // Build Sanity images
 const builder = imageUrlBuilder(client);
@@ -25,25 +26,25 @@ const HeroCarousel = ({ images }) => {
     <div className="relative w-full h-[600px] overflow-hidden">
       {/* Buttons container: fixed on top of slider */}
       <div className="absolute inset-0 flex flex-col lg:flex-row justify-center items-center font-second gap-6 z-20 pointer-events-auto">
-        <a
+        <Link
           href="/behandlingar"
           className="w-[250px] text-center py-4 bg-white/90 text-black/80 tracking-wider rounded-lg transition-all duration-300 hover:bg-[#2c3e50] hover:text-white text-lg "
         >
           Boka behandling
-        </a>
-        <a
+        </Link>
+        <Link
           href="/bocker"
           className="w-[250px] text-center py-4 bg-white/90 shadow-lg text-black/80  tracking-wider rounded-lg transition-all duration-300 hover:bg-[#2c3e50] hover:text-white text-lg "
         >
           Läs om mina böcker
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/webbshop"
           className="w-[250px] text-center py-4 bg-white/90 text-black/80 shadow-lg tracking-wider rounded-lg transition-all duration-300 hover:bg-[#2c3e50] hover:text-white text-lg "
         >
           Webbshop
-        </a>
+        </Link>
       </div>
 
       {/* Slider */}

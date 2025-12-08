@@ -12,9 +12,7 @@ const UpdatePosts = ({ postDate, title, description }) => {
     <div className="bg-white font-second  rounded-lg p-6 shadow-lg flex flex-col h-full ">
       {/* Date badge */}
       <div className="inline-flex items-center justify-center text-primary w-fit px-4 py-2 bg-primary/10 rounded-full mb-4">
-        <span className="text-sm uppercase font-semibold">
-          {formatDate(postDate)}
-        </span>
+        <span className="text-sm font-semibold">{formatDate(postDate)}</span>
       </div>
 
       {/* Title */}
