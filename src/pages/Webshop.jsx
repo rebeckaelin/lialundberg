@@ -8,37 +8,17 @@ const Webshop = () => {
         Välkommen till min webbshop
       </h2>
       <h3 className="text-lg pb-4">Här kan du köpa mina böcker</h3>
-      <p className="text-base italic text-center pb-10">
-        *obs, notera att det för närvarande är två separata webbshopar för mina
-        böcker*
-      </p>
-
-      <div className="w-[90%] flex flex-col lg:flex-row gap-10 ">
-        <iframe
-          title="Webshop"
-          src="https://widget.publit.com/webshop/2819?embedType=embed"
-          scrolling="yes"
-          className="w-full"
-          style={{
-            border: "none",
-            overflow: "hidden",
-            minHeight: "600px", // gives initial space, but not fixed
-            height: "1000px",
-          }}
-        />
-        <iframe
-          title="Webshop"
-          src="https://widget.publit.com/webshop/5249?embedType=embed"
-          scrolling="yes"
-          className="w-full"
-          style={{
-            border: "none",
-            overflow: "hidden",
-            minHeight: "600px", // gives initial space, but not fixed
-            height: "1000px",
-          }}
-        />
-      </div>
+      <iframe
+        title="Webshop"
+        src="https://widget.publit.com/webshop/5249?embedType=embed"
+        className="w-full"
+        style={{
+          border: "none",
+          overflow: "hidden",
+          minHeight: "600px",
+          height: "1000px",
+        }}
+      />
     </div>
   );
 };
