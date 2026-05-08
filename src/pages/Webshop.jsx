@@ -3,7 +3,6 @@ import DividerLine from "../components/DividerLine.jsx";
 const Webshop = () => {
   return (
     <div className=" w-full text-black/80 flex flex-col items-center font-second bg-primary/40 leading-relaxed pb-10">
-      {/* <DividerLine /> */}
       <h2 className="text-2xl lg:text-4xl text-black px-8 pt-4 font-semibold text-center mt-10">
         Välkommen till min webbshop
       </h2>
