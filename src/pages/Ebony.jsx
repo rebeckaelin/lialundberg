@@ -4,6 +4,8 @@ import TestimonialCarousel from "../components/TestimonialCarousel";
 import DividerLine from "../components/DividerLine";
 import { Link } from "react-router-dom";
 import Badge from "../components/Badge";
+import WhereToBuy from "../components/WhereToBuy";
+import Reseller from "../components/Reseller";
 
 const bookTestimonialsQuery = `*[_type == "testimonial" && category == "book"]{
   text,
@@ -179,7 +181,6 @@ const Ebony = () => {
               Köp i min egen webbshop
             </Link>
           </div>
-          {/* Add your store buttons/links here */}
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="https://www.adlibris.com/sv/bok/ebony-9789152798300"
@@ -206,82 +207,7 @@ const Ebony = () => {
               Akdemibokhandeln
             </a>
           </div>
-
-          <div className="">
-            <div className="flex items-center justify-center gap-4 mt-5 flex-wrap">
-              <div className="bg-white rounded-xl p-8 shadow-lg w-[250px]">
-                <div className="w-14 h-14 bg-[#7d9d8c]/10 mx-auto rounded-full flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-[#7d9d8c]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-second font-semibold text-black mb-3">
-                  Riddarborgen Hälsocenter
-                </h3>
-                <p className="font-second text-black/80 leading-relaxed">
-                  Residensgatan 1A Umeå
-                </p>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-lg w-[250px]">
-                <div className="w-14 h-14 bg-[#7d9d8c]/10 mx-auto  rounded-full flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-[#7d9d8c]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-second font-semibold text-black mb-3">
-                  Ica Mariehem
-                </h3>
-                <p className="font-second text-black/80 leading-relaxed">
-                  Mariehemsvägen 8 Umeå
-                </p>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-lg w-[250px]">
-                <div className="w-14 h-14 bg-[#7d9d8c]/10 mx-auto rounded-full flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-[#7d9d8c]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-second font-semibold text-black mb-3">
-                  Gårdshem
-                </h3>
-                <p className="font-second text-black/80 leading-relaxed">
-                  Kungsgatan 67 (Utopia) Umeå
-                </p>
-              </div>
-            </div>
-          </div>
+          <Reseller book="Ebony" />
         </div>
       </section>
     </>
