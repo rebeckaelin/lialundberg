@@ -4,6 +4,7 @@ import about from './about'
 import ebony from './ebony'
 import heroCarousel from './heroCarousel'
 import lillalia from './lillalia'
+import reseller from './reseller'
 
 import signupSection from './signupSection'
 import testimonials from './testimonials'
@@ -26,4 +27,5 @@ export const schemaTypes = [
   ebony,
   lillalia,
   // booksPage,
+  reseller,
 ]

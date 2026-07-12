@@ -44,7 +44,7 @@ const LillaLia = () => {
 
   useEffect(() => {
     client.fetch(query).then(setPageData);
-  }, []);
+  }, [query]);
 
   if (!pageData) return <div>Loading…</div>;
 
