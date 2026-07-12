@@ -6,7 +6,7 @@ const Webshop = () => {
       <h2 className="text-2xl lg:text-4xl text-black px-8 pt-4 font-semibold text-center mt-10">
         Välkommen till min webbshop
       </h2>
-      <h3 className="text-lg pb-4">Här kan du köpa mina böcker</h3>
+      <h3 className="text-lg pb-12">Här kan du köpa mina böcker</h3>
       <iframe
         title="Webshop"
         src="https://widget.publit.com/webshop/5249?embedType=embed"

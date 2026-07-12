@@ -1,6 +1,6 @@
-import LillaLia from '../../src/pages/LillaLia'
+// import LillaLia from '../../src/pages/LillaLia'
 import about from './about'
-import booksPage from './booksPage'
+// import booksPage from './booksPage'
 import ebony from './ebony'
 import heroCarousel from './heroCarousel'
 import lillalia from './lillalia'
@@ -25,5 +25,5 @@ export const schemaTypes = [
   welcomeSection,
   ebony,
   lillalia,
-  booksPage,
+  // booksPage,
 ]
