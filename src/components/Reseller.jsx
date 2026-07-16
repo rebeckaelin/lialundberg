@@ -29,11 +29,11 @@ const Reseller = ({ book }) => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="flex items-center justify-center gap-4 mt-5 flex-wrap">
+    <div className="flex items-center justify-center gap-4 mt-5 flex-wrap text-center">
       {resellers.map((r) => (
         <div
           key={r._id}
-          className="bg-white rounded-xl p-8 shadow-lg w-[250px]"
+          className="bg-white rounded-xl p-8 shadow-lg w-[250px] h-[250px] "
         >
           <div className="w-14 h-14 bg-[#7d9d8c]/10 mx-auto rounded-full flex items-center justify-center mb-6">
             <svg
