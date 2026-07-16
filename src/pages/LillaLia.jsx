@@ -3,6 +3,7 @@ import { client } from "../client";
 import DividerLine from "../components/DividerLine";
 import WhereToBuy from "../components/WhereToBuy";
 import { ChevronRight } from "lucide-react";
+import Reseller from "../components/Reseller";
 
 // Book images will come from Sanity
 // We'll maintain a consistent size: width 360px (desktop), scale down on mobile
@@ -272,6 +273,7 @@ const LillaLia = () => {
             webbshop={webbshop}
           />
         </div>
+        <Reseller book="LillaLia" />
       </section>
     </>
   );
